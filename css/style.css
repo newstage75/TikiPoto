@@ -1,0 +1,15 @@
+.tikipoto_img1{
+    width: 95%;
+    aspect-ratio: 1526 / 1074;
+    background-image: url("../img/tikipoto1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.tikipoto_img2{
+    width: 95%;
+    aspect-ratio: 1526 / 1074;
+    background-image: url("../img/tikipoto2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
