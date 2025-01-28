@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>間違い探し（答え）</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .fade {
+            transition: opacity 3s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">間違い探し</h1>
+    <div class="image-wrapper" onclick="toggleImages()">
+        <img id="image1" class="fade visible" src="img/tikipoto1.jpg" alt="画像1">
+        <img id="image2" class="fade hidden" src="img/tikipoto2.jpg" alt="画像2">
+    </div>
+
+    <script>
+        function toggleImages() {
+            const image1 = document.getElementById('image1');
+            const image2 = document.getElementById('image2');
+
+            if (image1.classList.contains('visible')) {
+                image1.classList.remove('visible');
+                image1.classList.add('hidden');
+                image2.classList.remove('hidden');
+                image2.classList.add('visible');
+            } else {
+                image2.classList.remove('visible');
+                image2.classList.add('hidden');
+                image1.classList.remove('hidden');
+                image1.classList.add('visible');
+            }
+        }
+    </script>
+</body>
+</html>
