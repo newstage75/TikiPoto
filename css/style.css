@@ -1,15 +1,39 @@
-.tikipoto_img1{
-    width: 95%;
-    aspect-ratio: 1526 / 1074;
-    background-image: url("../img/tikipoto1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.tikipoto_img2{
-    width: 95%;
-    aspect-ratio: 1526 / 1074;
-    background-image: url("../img/tikipoto2.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.image-container {
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .image-container {
+        width: 100%;
+    }
+
+    img {
+        margin-bottom: 10px;
+    }
 }
