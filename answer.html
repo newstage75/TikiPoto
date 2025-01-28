@@ -6,20 +6,27 @@
     <title>間違い探し（答え）</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .fade {
-            transition: opacity 3s ease;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+        body, html {
+            margin: 0;
+            padding: 0;
             height: 100%;
+            overflow: hidden;
         }
 
         .image-wrapper {
             position: relative;
             width: 100%;
-            max-width: 500px;
-            margin: auto;
+            height: 100%;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1.5s ease;
         }
 
         .hidden {
@@ -31,13 +38,24 @@
             opacity: 1;
             pointer-events: auto;
         }
+
+        @media (max-width: 750px) {
+            .image-wrapper {
+                height: auto;
+            }
+
+            img {
+                height: auto;
+                max-height: 100vh;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">間違い探し</h1>
+    <p style="text-align: center; font-size: 18px; margin-top: 10px;">画像をクリックしたら画像が切り替わるよ</p>
     <div class="image-wrapper" onclick="toggleImages()">
         <img id="image1" class="visible" src="img/tikipoto1.jpg" alt="画像1">
-        <img id="image2" class="fade hidden" src="img/tikipoto2.jpg" alt="画像2">
+        <img id="image2" class="hidden" src="img/tikipoto2.jpg" alt="画像2">
     </div>
 
     <script>
